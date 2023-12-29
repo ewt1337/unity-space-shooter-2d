@@ -12,3 +12,5 @@ Enemies regularly spawn in waves and attack the player. There are several types 
 There are also randomly scattered asteroids that absorb shots. The player must control the ship, shoot, dodge and survive as long as possible.
 
 The game has a menu, a level restart system and the ability to exit to the main menu. The overall goal is to score as many points as possible by destroying enemies and surviving as long as possible.
+
+![Image alt](https://github.com/{ewt1337}/{unity-space-shooter-2d}/raw/{main}/{ssT3/Assets/screenshot1.png}/screenshot1.png)
