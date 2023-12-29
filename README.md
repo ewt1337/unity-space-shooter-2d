@@ -1,6 +1,5 @@
 # unity space shooter 2d
 unity version 2022.3.8f1
-
 play here (webGL): https://randomname534.itch.io/2d-space-shooter-demo
 
 This is a top-down 2D space shooter. The player controls a spaceship that can fire laser shots, missiles and plasma shots. The goal of the game is to survive as long as possible by destroying enemies and avoiding asteroids.
