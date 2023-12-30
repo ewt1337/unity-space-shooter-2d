@@ -5,7 +5,6 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] private float health = 100f;
     [SerializeField] private int scoreValue = 10;
-    [SerializeField] private TextMeshProUGUI totalKillsDeathScreen;
 
     private ScoreManager scoreManager;
 
