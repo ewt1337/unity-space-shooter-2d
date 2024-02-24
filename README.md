@@ -1,7 +1,7 @@
 # unity space shooter 2d
 unity version 2022.3.8f1
 
-play here (webGL): https://randomname534.itch.io/2d-space-shooter-demo
+play here (webGL): (https://menipox.itch.io/2d-space-shooter-demo)
 
 W, A , S, D - movement
 Left mouse button - shoot
