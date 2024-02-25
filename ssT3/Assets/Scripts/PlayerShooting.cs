@@ -10,23 +10,27 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float bulletLaserSpeed = 20f;
     [SerializeField] private float bulletLifetime = 3f;
     [SerializeField] private float timeBetweenShots = 0.5f;
+    [SerializeField] private AudioClip laserAudioClip;
 
     [Header("Rocket Shooting Parameters")]
     [SerializeField] private GameObject rocketPrefab;
     [SerializeField] private float rocketSpeed = 12f;
     [SerializeField] private float amountFuelForRocket = 5f;
     [SerializeField] private float rocketCooldown = 1.5f;
+    [SerializeField] private AudioClip rocketLaunchClip;
     private float timeSinceLastRocket;
 
     [Header("AoELaser Shooting Parameters")]
     [SerializeField] private GameObject pointAoELaser1;
     [SerializeField] private GameObject pointAoELaser2;
+    [SerializeField] private AudioClip AoElaserAudioClip;
 
     [Header("Plasma Shooting Parameters")]
     [SerializeField] private GameObject plasmaBulletPrefab;
     [SerializeField] private float plasmaBulletSpeed = 9f;
     [SerializeField] private float amountFuelForPlasma = 6f;
     [SerializeField] private float plasmaCooldown = 3f;
+    [SerializeField] private AudioClip plasmaAudioClip;
     private float timeSinceLastPlasma;
 
 
@@ -50,12 +54,12 @@ public class PlayerShooting : MonoBehaviour
     private float timeSinceLastShot;
     private PlayerStats playerStats;
 
-    void Start()
+    private void Start()
     {
         playerStats = GetComponent<PlayerStats>();
     }
 
-    void Update()
+    private void Update()
     {
         HandleShootingInput(); // Handle shooting input
         SwitchWeapon(); // Switch weapons based on input
@@ -187,6 +191,7 @@ public class PlayerShooting : MonoBehaviour
         Rigidbody2D rb = laseBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePointObject.transform.up * bulletLaserSpeed, ForceMode2D.Impulse);
         Destroy(laseBullet, bulletLifetime);
+        AudioSource.PlayClipAtPoint(laserAudioClip, firePointObject.transform.position);
     }
 
     private void ShootRockets(GameObject firePointObject)
@@ -202,6 +207,8 @@ public class PlayerShooting : MonoBehaviour
                 Rigidbody2D rb = rocket.GetComponent<Rigidbody2D>();
                 rb.AddForce(firePointObject.transform.up * rocketSpeed, ForceMode2D.Impulse);
                 Destroy(rocket, bulletLifetime);
+
+                AudioSource.PlayClipAtPoint(rocketLaunchClip, firePointObject.transform.position);
 
                 // Reduce the number of available rockets
                 playerStats.rocketsPlayer--;
@@ -226,6 +233,7 @@ public class PlayerShooting : MonoBehaviour
             ShootFromFirePoint(pointAoELaser1);
             ShootFromFirePoint(pointAoELaser2);
 
+            
             playerStats.ammunationPlayer -= 3;
         }
         else
@@ -248,6 +256,8 @@ public class PlayerShooting : MonoBehaviour
 
             // Reset the cooldown timer for plasma guns
             timeSinceLastPlasma = 0f;
+
+            AudioSource.PlayClipAtPoint(plasmaAudioClip, firePointObject.transform.position);
         }
     }
 

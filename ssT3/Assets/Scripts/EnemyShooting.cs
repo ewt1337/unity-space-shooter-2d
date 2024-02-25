@@ -7,6 +7,7 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private float bulletForceMultiplier = 20f;
     [SerializeField] private float bulletLifetime = 3f;
+    [SerializeField] private AudioClip enemyWeaponAudioClip;
 
     private float nextFireTime;
 
@@ -20,6 +21,7 @@ public class EnemyShooting : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletForceMultiplier, ForceMode2D.Impulse);
             Destroy(bullet, bulletLifetime);
             nextFireTime = Time.time + 1f / fireRate;
+            AudioSource.PlayClipAtPoint(enemyWeaponAudioClip, transform.position);
         }
     }
 }

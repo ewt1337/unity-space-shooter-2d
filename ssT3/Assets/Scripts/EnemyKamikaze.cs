@@ -5,6 +5,8 @@ public class EnemyKamikaze : MonoBehaviour
     [SerializeField] private float speedKamikaze = 5f;
     [SerializeField] private float explosionRadius = 1.5f;
     [SerializeField] private float damageKamikaze = 9f;
+    [SerializeField] private AudioClip enemyExplosionAudioClip;
+    [SerializeField] private GameObject explosionPrefab;
 
     private Transform player;
 
@@ -47,6 +49,9 @@ public class EnemyKamikaze : MonoBehaviour
             }
         }
 
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        float volume = 0.3f;
+        AudioSource.PlayClipAtPoint(enemyExplosionAudioClip, transform.position, volume);
         Destroy(gameObject);
     }
 }

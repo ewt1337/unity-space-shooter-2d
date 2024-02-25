@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 625318349674300163}
   - component: {fileID: 6084390946545119422}
   m_Layer: 0
-  m_Name: idle_player_upgrade2
+  m_Name: Player GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,16 +518,20 @@ MonoBehaviour:
   bulletLaserSpeed: 20
   bulletLifetime: 3
   timeBetweenShots: 0.2
+  laserAudioClip: {fileID: 8300000, guid: 3866467036c22704997d68eac29027d5, type: 3}
   rocketPrefab: {fileID: 2829087640161115039, guid: fe54a56f319f4a04fbc062a8f7d48ca5, type: 3}
   rocketSpeed: 12
   amountFuelForRocket: 5
   rocketCooldown: 2
+  rocketLaunchClip: {fileID: 8300000, guid: c9b872b627be4244590ff7ad67602985, type: 3}
   pointAoELaser1: {fileID: 1881259040675236404}
   pointAoELaser2: {fileID: 4969340256982804258}
+  AoElaserAudioClip: {fileID: 8300000, guid: 3866467036c22704997d68eac29027d5, type: 3}
   plasmaBulletPrefab: {fileID: 675362637874672945, guid: 5fcda34d0bc008d459de99d212bda5ed, type: 3}
   plasmaBulletSpeed: 9
   amountFuelForPlasma: 6
   plasmaCooldown: 1.5
+  plasmaAudioClip: {fileID: 8300000, guid: c8a1d5b24ee69ab4cbf44bdbec55ddf3, type: 3}
   doubleLaserActive: 0
   currentWeapon: 0
   laserKey: 49

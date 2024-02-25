@@ -208,6 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   scoreValue: 15
+  explosionPrefab: {fileID: 6251597194090040943, guid: b6b4d340c04cc4945a5e2e31aeca336f, type: 3}
+  enemyExplosionAudioClip: {fileID: 8300000, guid: bfb375551aaf51d4c83757c8c2df586c, type: 3}
 --- !u!114 &1598757191116610017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +243,7 @@ MonoBehaviour:
   fireRate: 1
   bulletForceMultiplier: 20
   bulletLifetime: 3
+  enemyWeaponAudioClip: {fileID: 8300000, guid: fcf26dbb0a61c604fa1acd86984e8fd8, type: 3}
 --- !u!1 &7500720478927108849
 GameObject:
   m_ObjectHideFlags: 0

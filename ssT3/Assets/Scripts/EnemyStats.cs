@@ -5,6 +5,8 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] private float health = 100f;
     [SerializeField] private int scoreValue = 10;
+    [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private AudioClip enemyExplosionAudioClip;
 
     private ScoreManager scoreManager;
 
@@ -35,6 +37,10 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.LogError("ScoreManager is not properly initialized!");
         }
+        
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        float volume = 0.3f;
+        AudioSource.PlayClipAtPoint(enemyExplosionAudioClip, transform.position, volume);
 
         Destroy(gameObject);
     }

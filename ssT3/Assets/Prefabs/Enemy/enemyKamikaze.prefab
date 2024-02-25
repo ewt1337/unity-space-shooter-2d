@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   scoreValue: 5
+  explosionPrefab: {fileID: 6251597194090040943, guid: b6b4d340c04cc4945a5e2e31aeca336f, type: 3}
+  enemyExplosionAudioClip: {fileID: 8300000, guid: bfb375551aaf51d4c83757c8c2df586c, type: 3}
 --- !u!114 &6339971419098521129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,8 @@ MonoBehaviour:
   speedKamikaze: 4.5
   explosionRadius: 1.5
   damageKamikaze: 9
+  enemyExplosionAudioClip: {fileID: 8300000, guid: bfb375551aaf51d4c83757c8c2df586c, type: 3}
+  explosionPrefab: {fileID: 6251597194090040943, guid: b6b4d340c04cc4945a5e2e31aeca336f, type: 3}
 --- !u!61 &5886118809791470201
 BoxCollider2D:
   m_ObjectHideFlags: 0
